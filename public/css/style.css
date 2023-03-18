@@ -85,6 +85,7 @@ body {
 }
 .noteContainer {
   list-style: none;
+  font-size: 1.4rem;
 }
 .noteContainer li {
   text-decoration: none;
@@ -231,4 +232,10 @@ textarea {
   cursor: pointer;
   text-decoration: none;
 }
-
+.border{
+  border: 1px solid var(--colorSecondary)!important;
+}
+.border-right{
+  border-right: 1px solid var(--colorSecondary);
+  
+}
