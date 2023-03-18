@@ -1,0 +1,42 @@
+<%- include('partials/header') -%>
+<div class="container postCtr">
+  <div class="postMainCtr mt-5">
+    
+
+    <div class="col-6 noteContainer">
+      <ul class="todo-list">
+          <% for(let i = 0; i <notes.length ; i++) { %>
+            <% if (notes[i].note==notes.note) { %>
+                <li class="todo-list-item">
+                    <form action="/note/updateNote/<%= notes[i]._id %>?_method=PUT" method="POST">
+                        <input type="text" value="<%= notes[i].title %>" name="title">
+                        <textarea rows="6" cols="45"  name="note"><%= notes[i].note %></textarea>
+                        <button type="submit" class="confirm" value="Upload">Confirm</button>
+                        <a href="/profile" class="cancel" >Cancel</a>
+                    </form>
+                </li>
+                <% } else { %>
+                    <li class="todo-list-item">
+                        <div class="todo-list-item-title">
+                            <%= notes[i].title %>
+                        </div>
+                        <div class="todo-list-item-content">
+                            <%= notes[i].note %>
+                        </div>
+                        <a href="/note/<%= notes[i]._id %>" class="edit"> <span class="fas fa-edit"></span>
+                        </a>
+                        <a href="/note/deleteNote/<%= notes[i]._id %>" class="remove"> <span class="fas fa-times"></span>
+                        </a>
+                    </li>
+                    <% } %>
+                        <% } %>
+           
+        </ul>
+    </div>  
+    <div class="postFooter col-6 d-flex justify-content-center mt-5">
+      <a class="btn btn-primary" href="/profile">Return to Profile</a>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') -%>

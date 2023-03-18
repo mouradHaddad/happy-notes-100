@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+:root {
+  --colorPrimary: #ffffff;
+  --colorCardBg: rgba(83, 84, 85, 0.8);
+  --colorSecondary: #3d0c75;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #ffffff;
+}
+/**feed***/
+.cardContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.card {
+  width: 50rem;
+  height: 50rem;
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.cardTitle {
+  font-weight: 800;
+  text-transform: capitalize;
+  text-align: center;
+}
+.card img {
+  width: 30rem;
+  height: 30rem;
+}
+/**endFeed***/
+
+/**Post***/
+.postCtr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+.postMainCtr {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-items: center;
+}
+.postMainCtr > * {
+  width: 100%;
+}
+.description {
+  display: flex;
+  justify-content: start;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+.postMainCtr ul {
+  list-style: none;
+}
+.postMainCtr ul li {
+  text-decoration: none;
+  gap: 1rem;
+}
+.postFooter {
+  gap: 1rem;
+}
+/**endPost***/
+
+.ctr {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: #c3c3c375;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+.mainCtr {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  justify-items: center;
+}
+.noteContainer {
+  list-style: none;
+}
+.noteContainer li {
+  text-decoration: none;
+  list-style: none;
+  border: 1px solid black;
+}
+/*some style for the edit page*/
+.todo-container {
+  color: var(--colorSecondary);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  width: 600px;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo {
+  width: 400px;
+}
+
+h2 {
+  padding: 10px;
+  font-size: 2rem;
+}
+
+input {
+  margin-bottom: 2px;
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  height: 20px;
+  font-family: "Edu TAS Beginner", sans-serif;
+}
+
+textarea {
+  display: block;
+  padding: 2px;
+  width: 100%;
+  border-radius: 5px;
+  font-family: "Edu TAS Beginner", sans-serif;
+}
+
+.todo-header button {
+  display: block;
+  color: var(--colorPrimary);
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  padding: 5px;
+  background-color: rgb(51, 212, 51);
+  font-family: "Edu TAS Beginner", sans-serif;
+}
+
+.todo-list {
+  list-style: none;
+  margin: 0;
+}
+
+.todo-list-item {
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background: var(--colorSecondary);
+  display: flex;
+  flex-direction: row;
+}
+
+.todo-list-item-content {
+  font-size: 0.8rem;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.todo-list-item-content,
+.todo-list-item-title {
+  color: var(--colorPrimary);
+  font-size: 1.4rem;
+}
+
+.todo-list-item form {
+  width: 100%;
+  display: flex;
+  font-size: 1.4rem;
+}
+.todo-list-item form p {
+  color: var(--colorPrimary);
+}
+
+.todo-list-item input {
+  flex-grow: 2;
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.todo-list-item .confirm {
+  color: var(--colorPrimary);
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  background-color: rgb(51, 212, 100);
+  margin-left: 5px;
+  max-height: 30px;
+  font-family: "Edu TAS Beginner", sans-serif;
+  display: block;
+}
+
+.todo-list-item .cancel {
+  color: var(--colorPrimary);
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+  background-color: rgb(223, 43, 43);
+  margin-left: 5px;
+  max-height: 30px;
+  display: block;
+}
+
+.todo-list-item div {
+  flex-grow: 2;
+}
+
+.todo-list-item .edit {
+  color: rgb(143, 233, 58);
+  margin-right: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+.todo-list-item .remove {
+  color: rgb(243, 96, 96);
+  margin-right: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+

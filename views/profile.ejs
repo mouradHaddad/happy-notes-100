@@ -1,0 +1,83 @@
+<%- include('partials/header') -%>
+<div class="container ctr">
+  <div class="mt-5 mainCtr">
+      <div class="col-8">
+          <div>
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </div>
+          <div class="mt-5 noteAdding">
+            <h2>Add a note</h2>
+            <form action="/note/createNote" enctype="multipart/form-data" method="POST">
+              <div class="mb-3">
+                  <label for="title" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="title" name="title">
+              </div>
+              <div class="mb-3">
+                <label for="note" class="form-label">Note</label>
+                <textarea class="form-control" id="note" name="note">
+                </textarea> 
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary w-50 fs-5" value="Upload">Submit</button>
+              </div>
+            </form>
+          </div>
+      </div>
+      <div class="col-8 noteContainer">
+        <ul>
+          <% for(var i=0; i<notes.length; i++) {%>
+            <!-- <li class="col-6 justify-content-between mt-5" data-id="<%= notes[i]._id%>">
+              <h2><%= notes[i].title %></h2>
+              <p> <%= notes[i].note %> </p>
+              <span><%= notes[i].completed %></span>
+              <form
+                    action="/note/deleteNote/<%= notes[i]._id %>?_method=DELETE"
+                    method="POST"
+                    class="col-3"
+              >
+              <button class="btn btn-primary fa fa-trash" type="submit"></button>
+        </form>
+            </li> -->
+            <table class="table w-full">
+    <!-- head -->
+          <thead>
+            <tr>
+              <th></th>
+              <th>Title</th>
+              <th>note</th>
+              <th>date</th>
+            </tr>
+          </thead>
+          <tbody>
+          <!-- row 1 -->
+          <tr data-id="<%= notes[i]._id%>">
+            <th><%= i + 1 %></th>
+            <td><%= notes[i].title %></td>
+            <td><%= notes[i].note %></td>
+            <td><%= notes[i].createdAt %></td>
+            <td>
+              <a href="/note/<%= notes[i]._id %>" class="edit">
+                <span class="btn btn-success  fas fa-edit"></span>
+                </a>
+            </td>
+            <td>
+              <form
+                    action="/note/deleteNote/<%= notes[i]._id %>?_method=DELETE"
+                    method="POST"
+                    class="col-3"
+              >
+              <button class="btn btn-danger fas fa-times" type="submit"></button>
+              </form>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+          <% } %>   
+          </ul>
+      </div>  
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>
