@@ -9,7 +9,7 @@ html {
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: #ffffff;
+  background: url(../imgs/bodyBG.jpg);
 }
 /**feed***/
 .cardContainer {
@@ -73,7 +73,7 @@ body {
 .ctr {
   display: grid;
   grid-template-columns: 1fr;
-  background-color: #c3c3c375;
+
   gap: 1rem;
   padding-bottom: 1rem;
 }
@@ -232,10 +232,74 @@ textarea {
   cursor: pointer;
   text-decoration: none;
 }
-.border{
-  border: 1px solid var(--colorSecondary)!important;
+/*extra styling*/
+.border {
+  background: var(--colorSecondary) !important;
+  color: var(--colorPrimary);
 }
-.border-right{
-  border-right: 1px solid var(--colorSecondary);
+.border-right {
+  border-right: 1px solid var(--colorPrimary);
+}
+.btnS{
+  background: var(--colorSecondary);
+  color: var(--colorPrimary);
+  border-radius: 10rem;
+}
+.btnD {
+  width: 100%;
+  height: 40px;
+  background: var(--colorSecondary);
+  color: var(--colorPrimary);
+  border-radius: 10rem;
+}
+.btnD:hover, .btnS:hover {
+  background: var(--colorPrimary);
+  color: var(--colorSecondary);
+  text-transform: uppercase;
+}
+
+.height {
+  width: 100%;
+  height: 42px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-family: Montserrat;
+  padding: 0 20px 0 50px;
+  outline: none;
+}
+.loginForm {
+  width: 320px;
+  padding: 20px;
+  background: var(--colorPrimary);
+  border-radius: 5px;
+  border-top: 5px solid var(--colorSecondary);
+  margin: 0 auto;
+}
+.cardTitle {
+  text-align: center;
+  color: var(--colorCardBg);
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.signUpForm{
+  width: 52rem;
+  padding: 20px;
+  background: var(--colorPrimary);
+  border-radius: 5px;
+  border-top: 5px solid var(--colorSecondary);
+  margin: 0 auto;
+}
+.cardBody{
+  width: 20rem;
+  padding: 20px;
+  background: var(--colorPrimary);
+  border-radius: 5px;
+  border-top: 5px solid var(--colorSecondary);
   
+
 }

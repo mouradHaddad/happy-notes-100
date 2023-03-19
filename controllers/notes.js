@@ -60,7 +60,7 @@ module.exports = {
         note: req.body.note,
       });
       console.log("updated Note");
-      res.redirect("/edit");
+      res.redirect("/profile");
     } catch (err) {
       res.redirect("/profile");
     }

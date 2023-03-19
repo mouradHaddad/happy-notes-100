@@ -2,17 +2,17 @@
 <div class="container ctr">
   <div class="mt-5 mainCtr">
       <div class="col-8">
-          <div>
+          <div class="cardBody">
               <p><strong>User Name</strong>: <%= user.userName %></p>
               <p><strong>Email</strong>: <%= user.email %></p>
-              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+              <a href="/logout" class="btn btnS fs-5">Logout</a>
           </div>
           <div class="mt-5 noteAdding">
-            <h2>Add a note</h2>
-            <form action="/note/createNote" enctype="multipart/form-data" method="POST">
+            <form action="/note/createNote" enctype="multipart/form-data" method="POST" class="signUpForm">
+              <h2 class="cardTitle">Add a note</h2>
               <div class="mb-3">
                   <label for="title" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="title" name="title">
+                  <input type="text" class="form-control height" id="title" name="title">
               </div>
               <div class="mb-3">
                 <label for="note" class="form-label">Note</label>
@@ -20,7 +20,7 @@
                 </textarea> 
               </div>
               <div class="text-center">
-                <button type="submit" class="btn btn-primary w-50 fs-5" value="Upload">Submit</button>
+                <button type="submit" class="btn btnD w-40 fs-4" value="Upload">Submit</button>
               </div>
             </form>
           </div>
@@ -33,19 +33,19 @@
     <!-- head -->
           <thead>
             <tr>
-              <th></th>
-              <th class="border-right text-uppercase">Title</th>
-              <th class="border-right text-uppercase">note</th>
-              <th class="border-right text-uppercase">date</th>
+              <th>Number</th>
+              <th class=" text-uppercase text-center">Title</th>
+              <th class="tHead text-uppercase text-center">note</th>
+              <th class="tHead text-uppercase text-center">date</th>
             </tr>
           </thead>
           <tbody>
           <!-- row 1 -->
           <tr data-id="<%= notes[i]._id%>">
-            <th class="border-right"><%= i + 1 %></th>
-            <td class="border-right"><%= notes[i].title %></td>
-            <td class="border-right"><%= notes[i].note %></td>
-            <td class="border-right"><%= notes[i].createdAt %></td>
+            <th class="tHead border-right"><%= i + 1 %></th>
+            <td class="tHead border-right"><%= notes[i].title %></td>
+            <td class="tHead border-right"><%= notes[i].note %></td>
+            <td class="tHead border-right"><%= notes[i].createdAt %></td>
             <td>
               <a href="/note/<%= notes[i]._id %>" class="edit">
                 <span class="btn btn-success  fas fa-edit"></span>

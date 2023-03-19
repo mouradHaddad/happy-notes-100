@@ -6,11 +6,11 @@
     <div class="col-6 noteContainer">
       <ul class="todo-list">
           <% for(let i = 0; i <notes.length ; i++) { %>
-            <% if (notes[i].note==notes.note) { %>
+            <% if (notes[i].note==note.note) { %>
                 <li class="todo-list-item">
                     <form action="/note/updateNote/<%= notes[i]._id %>?_method=PUT" method="POST">
                         <input type="text" value="<%= notes[i].title %>" name="title">
-                        <textarea rows="6" cols="45"  name="note"><%= notes[i].note %></textarea>
+                        <textarea rows="6" cols="45" value="<%= notes[i].note %>" name="note"><%= notes[i].note %></textarea>
                         <button type="submit" class="confirm" value="Upload">Confirm</button>
                         <a href="/profile" class="cancel" >Cancel</a>
                     </form>
